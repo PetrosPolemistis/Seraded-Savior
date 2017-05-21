@@ -3,8 +3,13 @@
 
 #include "stdafx.h"
 #include "Launcher.h"
+#include <iostream>
 
 #define MAX_LOADSTRING 100
+
+//game dll information
+PCWSTR GAME_LIBRARY_PATH = L"C:\\Users\\petro\\Source\\Repos\\Seraded-Savior\\Library";
+PCWSTR GAME_MAIN_DLL = L"serratedsavior.dll";
 
 // Global Variables:
 HINSTANCE hInst;                                // current instance
@@ -99,15 +104,19 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
       CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
-
+   
    if (!hWnd)
    {
       return FALSE;
    }
 
    ShowWindow(hWnd, nCmdShow);
+   std::cout << "uno!";
    UpdateWindow(hWnd);
-
+   //load primary game dll (this subsequently boots the rest of the game)
+   AddDllDirectory(GAME_LIBRARY_PATH);
+   LoadLibrary(GAME_MAIN_DLL);
+   
    return TRUE;
 }
 
@@ -177,4 +186,9 @@ INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
         break;
     }
     return (INT_PTR)FALSE;
+}
+
+void loadGameInstance(void) 
+{
+	
 }
