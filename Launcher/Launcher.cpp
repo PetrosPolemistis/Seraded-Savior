@@ -8,11 +8,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <GL\glew.h>
+#include <glad\glad.h>
 #include <GL\GLU.h>
 #include <GL\GL.h>
 #include <GLFW\glfw3.h>
-
 
 double version = 1.0;
 
@@ -22,7 +21,7 @@ int main()
 	std::setprecision(1);
 	std::cout << "starting Serrated Savior Launcher version " << version << std::endl;	
 
-	//setup openGL with GLFW
+	//setup window context with GLFW
 	if (!glfwInit()) {
 		fprintf(stderr, "GLFW library failed to initialize");
 		return -1;
@@ -41,12 +40,14 @@ int main()
 		return -1;
 	}
 	glfwMakeContextCurrent(window);
-	glewExperimental = true;
-
-	if (glewInit() != GLEW_OK) {
-		fprintf(stderr, "Failed to initialize GLEW");
+	
+	//load openGL functions
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+		fprintf(stderr, "Failed to initialize OpenGL context");
 		return -1;
 	}
+	
+	printf("OpenGL  %d.%d\n", GLVersion.major, GLVersion.minor);
 
     return 0;
 }
