@@ -1,0 +1,3 @@
+echo starting python...
+python build_application.py
+echo done.
