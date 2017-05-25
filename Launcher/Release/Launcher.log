@@ -1,0 +1,14 @@
+﻿  Launcher.cpp
+Launcher.cpp(117): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+Launcher.cpp(118): warning C4244: 'argument': conversion from 'double' to 'GLsizei', possible loss of data
+Launcher.cpp(121): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+Launcher.cpp(122): warning C4244: 'argument': conversion from 'double' to 'GLsizei', possible loss of data
+gl3w.lib(gl3w.obj) : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:ICF' specification
+LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Generating code
+  0 of 173 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+gl3w.lib(gl3w.obj) : warning LNK4099: PDB 'gl3w.pdb' was not found with 'gl3w.lib(gl3w.obj)' or at 'C:\Users\petro\Source\Repos\Seraded-Savior\Launcher\Release\gl3w.pdb'; linking object as if no debug info
+  Launcher.vcxproj -> C:\Users\petro\Source\Repos\Seraded-Savior\Launcher\Release\Launcher.exe
